@@ -20,4 +20,35 @@ Hex-Rays IDA Pro v7.6 SP1 with all Decompilers - Restored Version
 
 www.52pojie.cn IDA 包含 5.x 、6.x 、7.x 
 > 链接: https://pan.baidu.com/s/1bdBhVTBYMk0lNIOtCxIjPw 提取码: w28g
->>>>>>> 3e564f220817d0b49ab2c550a969f6bec1535f95
+
+
+# IDA 绿化设置
+首先安装 python 并将 python 移动到 IDA 的目录，然后运行下列脚本。其中脚本中 PYTHON_BASE 根据自己的 python 目录进行更改即可。
+
+```bat
+rem 获取 python 环境
+set PATH=%~dp0
+set PYTHON_BASE=%PATH%Python39
+set PYTHON_PATH=%PYTHON_BASE%\python.exe
+set PYTHONW_PATH=%PYTHON_BASE%\pythonw.exe
+set PYTHON_LIB=%PYTHON_BASE%\Lib
+set PYTHON_DLL=%PYTHON_BASE%\DLLs
+
+rem  设置 python 环境
+@reg add HKEY_CURRENT_USER\SOFTWARE\Python\PythonCore\3.9\InstallPath /t REG_SZ /d %PYTHON_BASE% /f
+@reg add HKEY_CURRENT_USER\SOFTWARE\Python\PythonCore\3.9\InstallPath /v "ExecutablePath" /t REG_SZ /d %PYTHON_PATH% /f
+@reg add HKEY_CURRENT_USER\SOFTWARE\Python\PythonCore\3.9\InstallPath /v "WindowedExecutablePath" /t REG_SZ /d %PYTHONW_PATH% /f
+@reg add HKEY_CURRENT_USER\SOFTWARE\Python\PythonCore\3.9\PythonPath /d %PYTHON_LIB%;%PYTHON_DLL% /f
+
+rem  设置 Python3TargetDLL 环境
+set PYTHON39_DLL=%PYTHON_BASE%\python39.dll
+reg.exe add "HKCU\SOFTWARE\Hex-Rays\IDA" /v "Python3TargetDLL" /t REG_SZ /d %PYTHON39_DLL% /f
+
+rem  禁止自动更新
+reg.exe add "HKCU\SOFTWARE\Hex-Rays\IDA" /v "AutoCheckUpdates" /t REG_DWORD /d 0 /f
+reg.exe add "HKCU\SOFTWARE\Hex-Rays\IDA" /v "AutoRequestUpdates" /t REG_DWORD /d 0 /f
+reg.exe add "HKCU\SOFTWARE\Hex-Rays\IDA" /v "AutoUseLumina" /t REG_DWORD /d 0 /f
+
+echo "Greening is completed, please press any key to exit"
+pause
+```
