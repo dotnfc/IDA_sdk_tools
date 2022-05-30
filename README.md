@@ -52,3 +52,5 @@ reg.exe add "HKCU\SOFTWARE\Hex-Rays\IDA" /v "AutoUseLumina" /t REG_DWORD /d 0 /f
 echo "Greening is completed, please press any key to exit"
 pause
 ```
+参考：http://scz.617.cn:8/python/202011182246.txt
+
