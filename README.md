@@ -11,6 +11,11 @@ IDA PRO 7.7.220118 (SP1) (x86, x64, ARM64) By Dr.FarFar
 > https://www93.zippyshare.com/v/UgQ4pdA8/file.html
 > 
 > https://pan.baidu.com/s/1uQvdu08cpxuymWAePVtI-A  提取码：e00w 
+>
+> https://github.com/mkcs121/IDA_Pro_7.7
+>
+> https://github.com/IDALeaker/IDA-Pro-Leak
+
 
 IDA 7.7 sp1 Think-Cell 泄露版 + 激活文件，飘云阁分享
 > 原文件下载：https://pan.baidu.com/s/18JVkgOkz3nhS7nLX6dhRvw 提取码：0321 
