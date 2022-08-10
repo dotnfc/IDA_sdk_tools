@@ -2,6 +2,7 @@
 
 ida77_sdk_tools 来自：https://bbs.pediy.com/thread-271101.htm
 
+ida8.0_sdk_tools 来自: https://bbs.pediy.com/thread-273986.htm
 
 # IDA pro
 IDA PRO 7.7.220118 (SP1) (x86, x64, ARM64) By Dr.FarFar
